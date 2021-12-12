@@ -1,8 +1,7 @@
 .container {
-  margin: 20px auto;
-  padding: 20px;
-
   max-width: 1370px;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
 
   main {
     display: flex;
@@ -15,18 +14,32 @@
   flex: 1;
 
   div > h1 {
-    font-size: 20px;
-    line-height: 25px;
-
-    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
   }
 
   .projects {
-    margin-top: 30px;
+    margin-top: 1.875rem;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 1.875rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container main {
+    flex-direction: column;
+  }
+
+  .container main .content .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1040px) {
+  .container main .content .projects {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -38,7 +51,7 @@
 
   text-decoration: none;
 
-  padding: 30px;
+  padding: 1.875rem;
 
   .header {
     display: flex;
@@ -49,29 +62,25 @@
     }
 
     strong {
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 1rem;
+      line-height: 1.25rem;
 
-      margin-left: 16px;
-
-      color: var(--text-color);
+      margin-left: 1rem;
     }
   }
 
   .content p {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 
-    margin-top: 22px;
-
-    color: var(--text-color);
+    margin-top: 1.375rem;
   }
 
   .footer {
     display: flex;
     justify-content: space-between;
 
-    margin-top: 50px;
+    margin-top: 3.125rem;
 
     .projectInfo {
       display: flex;
@@ -93,10 +102,8 @@
       }
 
       .stars span {
-        font-size: 14px;
-        line-height: 18px;
-
-        color: var(--text-color);
+        font-size: 0.875rem;
+        line-height: 1.125rem;
       }
 
       .branches {
@@ -109,10 +116,8 @@
       }
 
       .branches span {
-        font-size: 14px;
-        line-height: 18px;
-
-        color: var(--text-color);
+        font-size: 0.875rem;
+        line-height: 1.125rem;
       }
     }
 
@@ -121,12 +126,10 @@
       align-items: center;
 
       span {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
 
         margin-left: 8px;
-
-        color: var(--text-color);
       }
     }
   }

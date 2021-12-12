@@ -24,17 +24,15 @@
   strong {
     margin-top: 30px;
 
-    font-size: 23px;
-    line-height: 29px;
-    color: var(--text-color);
+    font-size: 1.4375rem;
+    line-height: 1.8125rem;
   }
 
   small {
     margin-top: 10px;
 
-    font-size: 13px;
-    line-height: 16px;
-    color: var(--text-color);
+    font-size: 0.8125rem;
+    line-height: 1rem;
   }
 }
 
@@ -70,10 +68,8 @@
   }
 
   ul li span {
-    font-size: 12px;
-    line-height: 15px;
-
-    color: var(--text-color);
+    font-size: 0.875rem;
+    line-height: 0.9375rem;
   }
 }
 
@@ -81,10 +77,8 @@
   margin-top: 30px;
 
   strong {
-    font-size: 20px;
-    line-height: 25px;
-
-    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
   }
 
   > div {
@@ -105,8 +99,8 @@
       border-radius: 30px;
 
       font-weight: bold;
-      font-size: 10px;
-      line-height: 13px;
+      font-size: 0.625rem;
+      line-height: 0.75rem;
       text-transform: uppercase;
 
       color: #000000;
@@ -131,10 +125,8 @@
   ul li {
     margin-bottom: 20px;
 
-    font-size: 14px;
-    line-height: 18px;
-
-    color: var(--text-color);
+    font-size: 0.875rem;
+    line-height: 1.125rem;
   }
 }
 
@@ -142,10 +134,8 @@
   margin-top: 30px;
 
   > strong {
-    font-size: 20px;
-    line-height: 25px;
-
-    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
   }
 
   ul {
@@ -155,8 +145,8 @@
   ul li {
     margin-bottom: 20px;
 
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 0.947rem;
 
     color: var(--text-color);
   }
