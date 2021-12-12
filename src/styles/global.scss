@@ -1,7 +1,7 @@
 :root {
-  --body-bg-color: #efefef;
+  --body-bg-color: #22212c;
   --text-color: #837e9f;
-  --bg-cards: #e7e5e5;
+  --bg-cards: #302f3d;
   --bg-techs: #cb92b1;
 
   --pink: #ecb2ba;
@@ -77,49 +77,4 @@ a {
   padding: 30px;
 
   background-color: var(--bg-cards);
-}
-
-.tape-section {
-  position: absolute;
-  width: 100%;
-}
-
-.tape-section:first-of-type {
-  top: 0;
-}
-
-.tape-section:last-of-type {
-  bottom: 0;
-}
-
-.tape-section::before {
-  content: "";
-  width: 100px;
-  height: 30px;
-  position: absolute;
-  background-color: var(--tape-gray);
-  opacity: 0.5;
-  border-right: 1px dotted var(--tape-edge-gray);
-  border-left: 1px dotted var(--tape-edge-gray);
-}
-
-//cima esquerda
-.tape-section:first-of-type::before {
-  transform: rotate(-45deg);
-  left: -30px;
-}
-
-//baixo direita
-.tape-section:last-of-type::before {
-  transform: rotate(-45deg);
-  right: -30px;
-  bottom: 15px;
-}
-
-.paper-clip {
-  position: absolute;
-
-  top: -5px;
-  right: 0;
-  transform: rotate(-30deg);
 }

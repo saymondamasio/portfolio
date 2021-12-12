@@ -92,7 +92,7 @@
 
       .stars {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
 
         margin-right: 16px;
       }
@@ -108,7 +108,7 @@
 
       .branches {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
       }
 
       .branches svg {
