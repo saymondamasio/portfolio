@@ -99,7 +99,7 @@ export function SideBar() {
               <span>saymondamasio</span>
             </a>
           </li>
-
+          {/* 
           <li>
             <a
               href="https://saymondamasio.github.io"
@@ -110,7 +110,7 @@ export function SideBar() {
 
               <span>saymondamasio.github.io</span>
             </a>
-          </li>
+          </li> */}
 
           <li>
             <a href="mailto:saymondamasio95@gmail.com">
