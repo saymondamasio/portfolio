@@ -1,0 +1,131 @@
+:root {
+  --body-bg-color: #efefef;
+  --text-color: #837e9f;
+  --bg-cards: #e7e5e5;
+  --bg-techs: #cb92b1;
+
+  --pink: #ecb2ba;
+  --pink-dark: #c6939a;
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  font-family: "Fuzzy Bubbles";
+}
+
+.card {
+  background-color: var(--bg-cards);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  padding: 30px;
+}
+
+.bullet-points {
+  width: 15px;
+  height: 15px;
+
+  background: #e7de79;
+  border: 2px solid #837e9f;
+
+  border-radius: 50%;
+}
+
+.title {
+  height: 86px;
+
+  padding: 30px;
+
+  background-color: var(--bg-cards);
+}
+
+.paper {
+  background: #fff;
+  padding: 30px;
+  position: relative;
+}
+
+.paper,
+.paper::before,
+.paper::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid #bbb;
+}
+
+.paper::before,
+.paper::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+}
+
+.paper::before {
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.paper::after {
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+}
+
+.tape-section {
+  position: absolute;
+  width: 100%;
+}
+
+.tape-section:first-of-type {
+  top: 0;
+}
+
+.tape-section:last-of-type {
+  bottom: 0;
+}
+
+.tape-section::before {
+  content: "";
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  background-color: var(--tape-gray);
+  opacity: 0.5;
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+}
+
+//cima esquerda
+.tape-section:first-of-type::before {
+  transform: rotate(-45deg);
+  left: -30px;
+}
+
+//baixo direita
+.tape-section:last-of-type::before {
+  transform: rotate(-45deg);
+  right: -30px;
+  bottom: 15px;
+}
+
+.paper-clip {
+  position: absolute;
+
+  top: -5px;
+  right: 0;
+  transform: rotate(-30deg);
+}
