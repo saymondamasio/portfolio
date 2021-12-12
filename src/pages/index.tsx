@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import Folder from "../assets/folder.svg";
 import GitBranch from "../assets/git-branch.svg";
@@ -46,6 +47,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Portfólio | Saymon Damásio</title>
+      </Head>
       <main>
         <SideBar />
         <div className={styles.content}>
