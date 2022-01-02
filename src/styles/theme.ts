@@ -18,13 +18,13 @@ export const theme = extendTheme({
     },
   },
   fonts: {
-    body: '"Roboto", sans-serif',
-    heading: '"Roboto", sans-serif',
+    body: 'DM Sans, sans-serif',
+    heading: 'DM Sans, sans-serif',
   },
   styles: {
     global: {
       body: {
-        color: 'gray.100',
+        color: 'gray.200',
         backgroundColor: 'black.900',
       },
     },
