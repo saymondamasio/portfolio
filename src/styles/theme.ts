@@ -5,17 +5,13 @@ export const theme = extendTheme({
     green: {
       300: '#00DF5E',
     },
-    white: {
-      200: '#F9F9F9',
-    },
     gray: {
+      50: '#F9F9F9',
       100: '#828282',
       700: '#333333',
       900: '#212121',
     },
-    black: {
-      900: '#171717',
-    },
+    black: '#171717',
   },
   fonts: {
     body: 'DM Sans, sans-serif',
@@ -24,8 +20,8 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        color: 'gray.200',
-        backgroundColor: 'black.900',
+        color: 'gray.50',
+        backgroundColor: 'black',
       },
     },
   },
