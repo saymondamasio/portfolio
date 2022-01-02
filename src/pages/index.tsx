@@ -1,49 +1,54 @@
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import Folder from "../assets/folder.svg";
-import GitBranch from "../assets/git-branch.svg";
-import Star from "../assets/star.svg";
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
+import Folder from '../assets/folder.svg'
+import GitBranch from '../assets/git-branch.svg'
+import Star from '../assets/star.svg'
+import { Footer } from '../components/Footer'
+import { SideBar } from '../components/SideBar'
+import { api } from '../services/api'
+import styles from './home.module.scss'
 
-import { Footer } from "../components/Footer";
-import { SideBar } from "../components/SideBar";
-import { api } from "../services/api";
-
-import styles from "./home.module.scss";
-
-const repo_names = ["rentx-api", "ignews", "rocket-socket", "certificate", "gameplay-mobile", "valoriza-api"];
+const repo_names = [
+  'rentx-api',
+  'ignews',
+  'rocket-socket',
+  'certificate',
+  'gameplay-mobile',
+  'valoriza-api',
+]
 
 const bullet_colors: IBulletColors = {
-  TypeScript: "#2b7489",
-  JavaScript: "#f1e05a",
-};
+  TypeScript: '#2b7489',
+  JavaScript: '#f1e05a',
+}
 
 interface IBulletColors {
-  [key: string]: string;
+  [key: string]: string
 }
 
 interface IRepo {
-  id: number;
-  name: string;
-  full_name: string;
-  language: string;
-  stargazers_count: number;
-  forks_count: number;
-  description: string;
-  html_url: string;
+  id: number
+  name: string
+  full_name: string
+  language: string
+  stargazers_count: number
+  forks_count: number
+  description: string
+  html_url: string
 }
 
 export default function Home() {
-  const [repositories, setRepositories] = useState<IRepo[]>([]);
+  const [repositories, setRepositories] = useState<IRepo[]>([])
 
   useEffect(() => {
-    repo_names.forEach(async (repo_name) => {
-      const repository = await api.get(`repos/saymondamasio/${repo_name}`);
+    repo_names.forEach(async repo_name => {
+      const repository = await api.get(`repos/saymondamasio/${repo_name}`)
 
-      if (!repositories.find((repo) => repo.id === repository.data.id)) {
-        setRepositories((prev) => [...prev, repository.data]);
+      if (!repositories.find(repo => repo.id === repository.data.id)) {
+        setRepositories(prev => [...prev, repository.data])
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -58,7 +63,7 @@ export default function Home() {
           </div>
 
           <section className={styles.projects}>
-            {repositories.map((repository) => (
+            {repositories.map(repository => (
               <a
                 key={repository.id}
                 href={repository.html_url}
@@ -110,5 +115,5 @@ export default function Home() {
 
       <Footer />
     </div>
-  );
+  )
 }
