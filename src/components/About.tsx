@@ -9,12 +9,18 @@ export function About({ ...rest }: Props) {
         <Heading fontSize="3xl">Sobre mim</Heading>
 
         <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident
+          Olá, sou Saymon Damásio, sou desenvolvedor fullstack a mais de 2 anos,
+          mais focado em backend e moro atualmente no Brasil. Gosto nas horas
+          vagas de jogar video games, assistir anime e codar alguns projetos
+          open-source.
+        </Text>
+        <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
+          Minha jornada na area de programação começou em 2012, quando comecei o
+          curso de técnico de informática, foi me apresentado o Java e foi nessa
+          linguagem que aprendi a logica de programação, recentemente por meio
+          da Rocketseat aprendi Javascript e amei todo esse ecossistema em volta
+          da linguagem e desde então não parei mais de aprender as diversas
+          tecnologias que são feitas por meio dessa linguagem.
         </Text>
       </Flex>
 
