@@ -5,6 +5,7 @@ import {
   GridItem,
   Heading,
   Image,
+  Tooltip,
 } from '@chakra-ui/react'
 
 type Props = FlexProps
@@ -81,7 +82,9 @@ export function MySkills({ ...rest }: Props) {
               justify="center"
               bgColor="gray.700"
             >
-              <Image src={skill.icon} alt={skill.name} />
+              <Tooltip label={skill.name} fontSize="md">
+                <Image src={skill.icon} alt={skill.name} />
+              </Tooltip>
             </Flex>
           </GridItem>
         ))}
