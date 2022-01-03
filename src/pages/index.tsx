@@ -5,16 +5,12 @@ import { About } from '../components/About'
 import { Banner } from '../components/Banner'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
+import { MySkills } from '../components/MySkills'
+import { Projects } from '../components/Projects'
+import { Services } from '../components/Services'
 import { api } from '../services/api'
 
-const repo_names = [
-  'rentx-api',
-  'ignews',
-  'rocket-socket',
-  'certificate',
-  'gameplay-mobile',
-  'valoriza-api',
-]
+const repo_names = ['rentx-api', 'rocket-socket', 'certificate']
 
 const bullet_colors: IBulletColors = {
   TypeScript: '#2b7489',
@@ -43,6 +39,8 @@ export default function Home() {
     repo_names.forEach(async repo_name => {
       const repository = await api.get(`repos/saymondamasio/${repo_name}`)
 
+      console.log(repository.data)
+
       if (!repositories.find(repo => repo.id === repository.data.id)) {
         setRepositories(prev => [...prev, repository.data])
       }
@@ -54,15 +52,18 @@ export default function Home() {
       <Head>
         <title>Portfólio | Saymon Damásio</title>
       </Head>
-      <Flex as="main" w="100vw" direction="column">
+      <Flex as="main" direction="column">
         <Header />
         <Flex justify="center">
           <Flex maxW="1140px" w="100%" direction="column">
             <Banner mt="100px" />
             <About mt="160px" />
+            <Projects mt="130px" projects={repositories} />
+            <Services mt="127px" />
+            <MySkills mt="127px" />
           </Flex>
         </Flex>
-        <Footer />
+        <Footer mt="222px" />
       </Flex>
     </>
   )
