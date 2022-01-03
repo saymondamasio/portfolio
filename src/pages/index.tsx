@@ -1,6 +1,9 @@
 import { Flex } from '@chakra-ui/react'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { About } from '../components/About'
+import { Banner } from '../components/Banner'
+import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { api } from '../services/api'
 
@@ -51,67 +54,15 @@ export default function Home() {
       <Head>
         <title>Portfólio | Saymon Damásio</title>
       </Head>
-      <Flex w="100vw">
+      <Flex as="main" w="100vw" direction="column">
         <Header />
-        {/* <main>
-          <SideBar />
-          <div className={styles.content}>
-            <div className="title card">
-              <h1>My Projects</h1>
-            </div>
-
-            <section className={styles.projects}>
-              {repositories.map(repository => (
-                <a
-                  key={repository.id}
-                  href={repository.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${styles.project} card`}
-                >
-                  <div className={styles.header}>
-                    <Folder />
-
-                    <strong>{repository.name}</strong>
-                  </div>
-
-                  <div className={styles.content}>
-                    <p>{repository.description}</p>
-                  </div>
-
-                  <div className={styles.footer}>
-                    <div className={styles.projectInfo}>
-                      <div className={styles.stars}>
-                        <Star />
-
-                        <span>{repository.stargazers_count}</span>
-                      </div>
-
-                      <div className={styles.branches}>
-                        <GitBranch />
-
-                        <span>{repository.forks_count}</span>
-                      </div>
-                    </div>
-
-                    <div className={styles.projectTechs}>
-                      <div
-                        className="bullet-points"
-                        style={{
-                          backgroundColor: bullet_colors[repository.language],
-                        }}
-                      />
-
-                      <span>{repository.language}</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </section>
-          </div>
-        </main>
-
-        <Footer /> */}
+        <Flex justify="center">
+          <Flex maxW="1140px" w="100%" direction="column">
+            <Banner mt="100px" />
+            <About mt="160px" />
+          </Flex>
+        </Flex>
+        <Footer />
       </Flex>
     </>
   )
