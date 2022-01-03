@@ -11,22 +11,22 @@ export function Header() {
         <Flex as="nav">
           <List variant="unstyled" display="flex" alignItems="center" gap="12">
             <ListItem>
-              <Link href="#" fontSize="lg">
+              <Link href="#about" fontSize="lg">
                 Sobre mim
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="#" fontSize="lg">
+              <Link href="#projects" fontSize="lg">
                 Projetos
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="#" fontSize="lg">
+              <Link href="#services" fontSize="lg">
                 Serviços
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="#" fontSize="lg">
+              <Link href="#my-skills" fontSize="lg">
                 Minhas skills
               </Link>
             </ListItem>

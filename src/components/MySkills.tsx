@@ -62,7 +62,7 @@ const skills = [
 
 export function MySkills({ ...rest }: Props) {
   return (
-    <Flex direction="column" align="center" {...rest}>
+    <Flex id="my-skills" direction="column" align="center" {...rest}>
       <Heading fontSize="3xl">Minhas skills</Heading>
 
       <Grid

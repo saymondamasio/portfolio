@@ -26,7 +26,7 @@ interface Props extends FlexProps {
 
 export function Projects({ projects, ...rest }: Props) {
   return (
-    <Flex direction="column" align="center" {...rest}>
+    <Flex id="projects" direction="column" align="center" {...rest}>
       <Heading fontSize="3xl">Projetos</Heading>
       <Grid mt="30px" templateColumns="repeat(3, 1fr)" gap="45px">
         {projects.map(project => (

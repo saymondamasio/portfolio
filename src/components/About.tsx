@@ -4,7 +4,7 @@ type Props = FlexProps
 
 export function About({ ...rest }: Props) {
   return (
-    <Flex align="center" direction="column" {...rest}>
+    <Flex id="about" align="center" direction="column" {...rest}>
       <Flex maxW="745px" w="100%" direction="column" align="center">
         <Heading fontSize="3xl">Sobre mim</Heading>
 

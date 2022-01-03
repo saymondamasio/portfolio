@@ -12,7 +12,7 @@ type Props = FlexProps
 
 export function Services({ ...rest }: Props) {
   return (
-    <Flex direction="column" align="center" {...rest}>
+    <Flex id="services" direction="column" align="center" {...rest}>
       <Heading fontSize="3xl">Serviços</Heading>
 
       <Grid mt="30px" w="100%" templateColumns="repeat(3, 1fr)" gap="10">
