@@ -1,11 +1,11 @@
-import { Button, Flex, FlexProps, Image, Stack, Text } from '@chakra-ui/react'
+import { Button, Flex, FlexProps, Image, Text } from '@chakra-ui/react'
 
 type Props = FlexProps
 
 export function Banner({ ...rest }: Props) {
   return (
     <Flex w="100%" justify="space-between" {...rest}>
-      <Stack>
+      <Flex direction="column">
         <Text fontSize="4xl" lineHeight="47px" fontWeight="bold">
           Olá, eu sou o <br /> Saymon Damásio :{')'}
         </Text>
@@ -39,7 +39,7 @@ export function Banner({ ...rest }: Props) {
             Entrar em contato
           </Button>
         </Flex>
-      </Stack>
+      </Flex>
 
       <Image
         src="/images/man_with_smartphone.svg"
