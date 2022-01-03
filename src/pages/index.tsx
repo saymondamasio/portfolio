@@ -10,18 +10,18 @@ import { Projects } from '../components/Projects'
 import { Services } from '../components/Services'
 import { api } from '../services/api'
 
-const repo_names = ['rentx-api', 'rocket-socket', 'certificate']
+const repo_names = ['rentx-api', 'rocket-socket', 'certificate', 'ignews']
 
-const bullet_colors: IBulletColors = {
+const bullet_colors: BulletColors = {
   TypeScript: '#2b7489',
   JavaScript: '#f1e05a',
 }
 
-interface IBulletColors {
+interface BulletColors {
   [key: string]: string
 }
 
-interface IRepo {
+interface Repo {
   id: number
   name: string
   full_name: string
@@ -32,19 +32,41 @@ interface IRepo {
   html_url: string
 }
 
+interface Project {
+  id: number
+  name: string
+  short_description: string
+  description: string
+  images: string[]
+  videos: string[]
+}
+
 export default function Home() {
-  const [repositories, setRepositories] = useState<IRepo[]>([])
+  const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
     repo_names.forEach(async repo_name => {
-      const repository = await api.get(`repos/saymondamasio/${repo_name}`)
+      const repository = await api.get<Repo>(`repos/saymondamasio/${repo_name}`)
 
-      console.log(repository.data)
+      const info_project = await api.get(
+        `https://raw.githubusercontent.com/saymondamasio/${repo_name}/master/info-project.json`
+      )
 
-      if (!repositories.find(repo => repo.id === repository.data.id)) {
-        setRepositories(prev => [...prev, repository.data])
+      if (!projects.find(project => project.id === repository.data.id)) {
+        setProjects(prev => [
+          ...prev,
+          {
+            id: repository.data.id,
+            name: info_project.data.name,
+            short_description: info_project.data.short_description,
+            description: info_project.data.description,
+            images: info_project.data.images || [],
+            videos: info_project.data.videos || [],
+          },
+        ])
       }
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -58,7 +80,7 @@ export default function Home() {
           <Flex maxW="1140px" w="100%" direction="column">
             <Banner mt="100px" />
             <About mt="160px" />
-            <Projects mt="130px" projects={repositories} />
+            <Projects mt="130px" projects={projects} />
             <Services mt="127px" />
             <MySkills mt="127px" />
           </Flex>
