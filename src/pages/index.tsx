@@ -10,16 +10,22 @@ import { Projects } from '../components/Projects'
 import { Services } from '../components/Services'
 import { api } from '../services/api'
 
-const repo_names = ['rentx-api', 'rocket-socket', 'certificate', 'ignews']
-
-const bullet_colors: BulletColors = {
-  TypeScript: '#2b7489',
-  JavaScript: '#f1e05a',
-}
-
-interface BulletColors {
-  [key: string]: string
-}
+const repo_names = [
+  'rentx-api',
+  'finapi',
+  'rocket-socket',
+  'certificate',
+  'todos',
+  'valoriza-api',
+  'ignews',
+  'watchme',
+  'upfi',
+  'dashgo',
+  'worldtrip',
+  'spacetraveling',
+  'dtmoney',
+  'github-explorer',
+]
 
 interface Repo {
   id: number
