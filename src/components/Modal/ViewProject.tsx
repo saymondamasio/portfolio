@@ -1,4 +1,5 @@
 import {
+  Badge,
   Flex,
   Heading,
   Image,
@@ -8,10 +9,16 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Stack,
   Text,
 } from '@chakra-ui/react'
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+type Tech = {
+  name: string
+  url: string
+}
 
 type Project = {
   id: number
@@ -20,6 +27,8 @@ type Project = {
   description: string
   images: string[]
   videos: string[]
+  techs: Tech[]
+  link_preview?: string
 }
 
 interface Props {
@@ -32,7 +41,6 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
   const images = project?.images || []
   const videos = project?.videos || []
   const medias = [...images, ...videos]
-  console.log(medias)
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -65,7 +73,39 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
               />
             )}
           </Flex>
-          <Heading mt="10">{project?.name}</Heading>
+          {project?.techs.length > 0 && (
+            <Stack mt="5" flexWrap="wrap" rowGap="2" direction="row">
+              {project?.techs.map(tech => (
+                <Badge
+                  as="a"
+                  target="_blank"
+                  variant="solid"
+                  colorScheme="green"
+                  fontSize="sm"
+                  href={tech.url}
+                  key={tech.name}
+                >
+                  {tech.name}
+                </Badge>
+              ))}
+            </Stack>
+          )}
+          <Flex mt="10" w="100%" align="center" justify="space-between">
+            <Heading>{project?.name}</Heading>
+
+            {project?.link_preview && (
+              <Badge
+                as="a"
+                target="_blank"
+                variant="outline"
+                colorScheme="green"
+                fontSize="sm"
+                href={project.link_preview}
+              >
+                Preview
+              </Badge>
+            )}
+          </Flex>
           <Text mt="5">{project?.description}</Text>
         </ModalBody>
       </ModalContent>

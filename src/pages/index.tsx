@@ -38,6 +38,11 @@ interface Repo {
   html_url: string
 }
 
+type Tech = {
+  name: string
+  url: string
+}
+
 interface Project {
   id: number
   name: string
@@ -45,6 +50,8 @@ interface Project {
   description: string
   images: string[]
   videos: string[]
+  techs: Tech[]
+  link_preview?: string
 }
 
 export default function Home() {
@@ -52,24 +59,32 @@ export default function Home() {
 
   useEffect(() => {
     repo_names.forEach(async repo_name => {
-      const repository = await api.get<Repo>(`repos/saymondamasio/${repo_name}`)
+      try {
+        const repository = await api.get<Repo>(
+          `repos/saymondamasio/${repo_name}`
+        )
+        const info_project = await api.get(
+          `https://raw.githubusercontent.com/saymondamasio/${repo_name}/master/info-project.json`
+        )
+        console.log(info_project.data)
 
-      const info_project = await api.get(
-        `https://raw.githubusercontent.com/saymondamasio/${repo_name}/master/info-project.json`
-      )
-
-      if (!projects.find(project => project.id === repository.data.id)) {
-        setProjects(prev => [
-          ...prev,
-          {
-            id: repository.data.id,
-            name: info_project.data.name,
-            short_description: info_project.data.short_description,
-            description: info_project.data.description,
-            images: info_project.data.images || [],
-            videos: info_project.data.videos || [],
-          },
-        ])
+        if (!projects.find(project => project.id === repository.data.id)) {
+          setProjects(prev => [
+            ...prev,
+            {
+              id: repository.data.id,
+              name: info_project.data.name,
+              short_description: info_project.data.short_description,
+              description: info_project.data.description,
+              images: info_project.data.images || [],
+              videos: info_project.data.videos || [],
+              techs: info_project.data.techs || [],
+              link_preview: info_project.data.link_preview,
+            },
+          ])
+        }
+      } catch (error) {
+        console.log(error)
       }
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps

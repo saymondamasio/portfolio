@@ -13,6 +13,11 @@ import {
 import { useState } from 'react'
 import { ViewProject } from './Modal/ViewProject'
 
+type Tech = {
+  name: string
+  url: string
+}
+
 type Project = {
   id: number
   name: string
@@ -20,6 +25,7 @@ type Project = {
   description: string
   images: string[]
   videos: string[]
+  techs: Tech[]
 }
 
 interface Props extends FlexProps {
