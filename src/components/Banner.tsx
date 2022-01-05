@@ -1,8 +1,20 @@
-import { Button, Flex, FlexProps, Image, Text } from '@chakra-ui/react'
+import {
+  Button,
+  Flex,
+  FlexProps,
+  Image,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react'
 
 type Props = FlexProps
 
 export function Banner({ ...rest }: Props) {
+  const isMedium = useBreakpointValue({
+    base: false,
+    md: true,
+  })
+
   return (
     <Flex w="100%" justify="space-between" {...rest}>
       <Flex direction="column">
@@ -41,10 +53,12 @@ export function Banner({ ...rest }: Props) {
         </Flex>
       </Flex>
 
-      <Image
-        src="/images/man_with_smartphone.svg"
-        alt="Homem com smartphone na mão com estrelas ao fundo"
-      />
+      {isMedium && (
+        <Image
+          src="/images/man_with_smartphone.svg"
+          alt="Homem com smartphone na mão com estrelas ao fundo"
+        />
+      )}
     </Flex>
   )
 }
