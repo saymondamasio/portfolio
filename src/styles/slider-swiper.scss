@@ -2,6 +2,11 @@
   background-color: #999999;
   width: 16px;
   height: 16px;
+
+  @media (max-width: 30em) {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .swiper-pagination-bullet-active {
