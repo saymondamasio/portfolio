@@ -69,7 +69,7 @@ export default function Projects() {
 
         try {
           const response = await api.get(
-            `https://raw.githubusercontent.com/saymondamasio/${repo_name}/main/info-project.json`
+            `https://raw.githubusercontent.com/saymondamasio/${repo_name}/main/project-info.json`
           )
           project_info = response.data
           projects.push({
