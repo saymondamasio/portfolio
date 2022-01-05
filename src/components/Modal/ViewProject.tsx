@@ -21,7 +21,7 @@ type Tech = {
 }
 
 type Project = {
-  id: number
+  id: string
   name: string
   short_description: string
   description: string
@@ -45,11 +45,11 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent bgColor="gray.900" maxW="900px" p="30px">
+      <ModalContent bgColor="gray.900" w="90%" maxW="900px" p="30px">
         <ModalHeader p="0">{project?.name}</ModalHeader>
         <ModalCloseButton top="30px" right="30px" />
         <ModalBody mt="10" p="0" w="100%">
-          <Flex w="100%" h={['250px', '450px']}>
+          <Flex>
             {medias.length > 0 ? (
               <Swiper
                 style={{ width: '100%', flex: '1' }}
@@ -60,7 +60,12 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
               >
                 {medias?.map(media => (
                   <SwiperSlide key={media}>
-                    <Image w="100%" h="100%" src={media} alt={project.name} />
+                    <Image
+                      boxSize="100%"
+                      objectFit="cover"
+                      src={media}
+                      alt={project.name}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
