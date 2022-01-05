@@ -10,6 +10,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { v4 } from 'uuid'
@@ -47,6 +48,7 @@ interface Project {
   videos: string[]
   techs: Tech[]
   link_preview?: string
+  link_repo: string
 }
 
 export default function Projects() {
@@ -81,6 +83,7 @@ export default function Projects() {
             videos: project_info.videos || [],
             techs: project_info.techs || [],
             link_preview: project_info.link_preview,
+            link_repo: `https://github.com/saymondamasio/${repo_name}`,
           })
         } catch {}
       }
@@ -93,70 +96,79 @@ export default function Projects() {
   )
 
   return (
-    <Flex as="main" flex="1" mb="10" justify="center">
-      <Flex maxW="1140px" w="100%" px="10" direction="column" align="center">
-        <Heading fontSize="3xl">Projetos</Heading>
-        {isLoading ? (
-          <Flex flex="1" justify="center">
-            <Spinner />
-          </Flex>
-        ) : error ? (
-          <Flex flex="1" justify="center">
-            <Text>Falha ao obter dados dos projetos</Text>
-          </Flex>
-        ) : (
-          <Grid
-            mt="30px"
-            templateColumns={{
-              sm: 'repeat(auto-fit, minmax(300px,1fr))',
-              lg: 'repeat(3, 1fr)',
-            }}
-            gap={{ base: '5', lg: '10' }}
-          >
-            {data!.map(project => (
-              <GridItem key={project.id}>
-                <Flex
-                  h="100%"
-                  direction="column"
-                  align="center"
-                  px="5"
-                  py="5"
-                  borderColor="gray.700"
-                  borderWidth="1px"
-                  bgColor="gray.900"
-                >
-                  <Box bgColor="black" borderWidth="1px" borderColor="gray.700">
-                    <Image
-                      fallbackSrc="/images/project_cover.svg"
-                      src={project?.images[0]}
-                      alt={project.name}
-                    />
-                  </Box>
-                  <Box w="100%" mt="5">
-                    <Button
-                      variant="unstyled"
-                      onClick={() => handleOpenModal(project)}
-                      textAlign="left"
-                      fontWeight="medium"
-                      fontSize="lg"
+    <>
+      <Head>
+        <title>Portfólio | Projetos</title>
+      </Head>
+      <Flex as="main" flex="1" mb="10" justify="center">
+        <Flex maxW="1140px" w="100%" px="10" direction="column" align="center">
+          <Heading fontSize="3xl">Projetos</Heading>
+          {isLoading ? (
+            <Flex flex="1" justify="center">
+              <Spinner />
+            </Flex>
+          ) : error ? (
+            <Flex flex="1" justify="center">
+              <Text>Falha ao obter dados dos projetos</Text>
+            </Flex>
+          ) : (
+            <Grid
+              mt="30px"
+              templateColumns={{
+                sm: 'repeat(auto-fit, minmax(300px,1fr))',
+                lg: 'repeat(3, 1fr)',
+              }}
+              gap={{ base: '5', lg: '10' }}
+            >
+              {data!.map(project => (
+                <GridItem key={project.id}>
+                  <Flex
+                    h="100%"
+                    direction="column"
+                    align="center"
+                    px="5"
+                    py="5"
+                    borderColor="gray.700"
+                    borderWidth="1px"
+                    bgColor="gray.900"
+                  >
+                    <Box
+                      bgColor="black"
+                      borderWidth="1px"
+                      borderColor="gray.700"
                     >
-                      {project.name}
-                    </Button>
-                    <Text fontSize="sm" mt="6px" color="gray.100">
-                      {project.short_description}
-                    </Text>
-                  </Box>
-                </Flex>
-              </GridItem>
-            ))}
-          </Grid>
-        )}
-        <ViewProject
-          isOpen={isOpen}
-          onClose={onClose}
-          project={projectSelected!}
-        />
+                      <Image
+                        fallbackSrc="/images/project_cover.svg"
+                        src={project?.images[0]}
+                        alt={project.name}
+                      />
+                    </Box>
+                    <Box w="100%" mt="5">
+                      <Button
+                        variant="unstyled"
+                        onClick={() => handleOpenModal(project)}
+                        textAlign="left"
+                        fontWeight="medium"
+                        fontSize="lg"
+                      >
+                        {project.name}
+                      </Button>
+                      <Text fontSize="sm" mt="6px" color="gray.100">
+                        {project.short_description}
+                      </Text>
+                    </Box>
+                  </Flex>
+                </GridItem>
+              ))}
+            </Grid>
+          )}
+          <ViewProject
+            isOpen={isOpen}
+            onClose={onClose}
+            project={projectSelected!}
+          />
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   )
 }

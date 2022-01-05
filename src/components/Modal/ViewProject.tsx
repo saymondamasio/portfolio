@@ -29,6 +29,7 @@ type Project = {
   videos: string[]
   techs: Tech[]
   link_preview?: string
+  link_repo: string
 }
 
 interface Props {
@@ -81,13 +82,20 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
               <Image
                 w="100%"
                 h="100%"
+                maxH="350px"
                 src="/images/project_cover.svg"
                 alt={project?.name}
               />
             )}
           </Flex>
           {project?.techs.length > 0 && (
-            <Stack mt="5" flexWrap="wrap" rowGap="2" direction="row">
+            <Stack
+              mt="5"
+              flexWrap="wrap"
+              rowGap="2"
+              justify="center"
+              direction="row"
+            >
               {project?.techs.map(tech => (
                 <Badge
                   as="a"
@@ -106,18 +114,31 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
           <Flex mt="10" w="100%" align="center" justify="space-between">
             <Heading>{project?.name}</Heading>
 
-            {project?.link_preview && (
+            <Stack direction="row">
               <Badge
                 as="a"
                 target="_blank"
                 variant="outline"
-                colorScheme="green"
+                colorScheme="messenger"
                 fontSize="sm"
-                href={project.link_preview}
+                href={project?.link_repo}
               >
-                Preview
+                Repositório
               </Badge>
-            )}
+
+              {project?.link_preview && (
+                <Badge
+                  as="a"
+                  target="_blank"
+                  variant="outline"
+                  colorScheme="green"
+                  fontSize="sm"
+                  href={project.link_preview}
+                >
+                  Preview
+                </Badge>
+              )}
+            </Stack>
           </Flex>
           <Text mt="5">{project?.description}</Text>
         </ModalBody>
