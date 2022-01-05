@@ -40,7 +40,6 @@ interface Props {
 export function ViewProject({ isOpen, onClose, project }: Props) {
   const images = project?.images || []
   const videos = project?.videos || []
-  const medias = [...images, ...videos]
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -50,7 +49,7 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
         <ModalCloseButton top="30px" right="30px" />
         <ModalBody mt="10" p="0" w="100%">
           <Flex>
-            {medias.length > 0 ? (
+            {images.length > 0 || videos.length > 0 ? (
               <Swiper
                 style={{ width: '100%', flex: '1' }}
                 modules={[Navigation, Pagination, Autoplay, A11y]}
@@ -58,14 +57,23 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
                 pagination={{ clickable: true }}
                 slidesPerView={1}
               >
-                {medias?.map(media => (
-                  <SwiperSlide key={media}>
+                {images?.map(image => (
+                  <SwiperSlide key={image}>
                     <Image
                       boxSize="100%"
                       objectFit="cover"
-                      src={media}
+                      src={image}
                       alt={project.name}
                     />
+                  </SwiperSlide>
+                ))}
+                {videos?.map(video => (
+                  <SwiperSlide key={video}>
+                    <video width="100%" autoPlay controls={false} loop>
+                      <source src={video} type="video/mp4" />
+                      <source src="movie.ogg" type="video/ogg" />
+                      Your browser does not support the video tag.
+                    </video>
                   </SwiperSlide>
                 ))}
               </Swiper>
