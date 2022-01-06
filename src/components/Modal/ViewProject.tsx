@@ -61,7 +61,7 @@ export function ViewProject({ isOpen, onClose, project }: Props) {
                 {images?.map(image => (
                   <SwiperSlide key={image}>
                     <Image
-                      boxSize="100%"
+                      width="100%"
                       objectFit="cover"
                       src={image}
                       alt={project.name}
