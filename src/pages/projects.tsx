@@ -19,15 +19,15 @@ import { api } from '../services/api'
 
 const repo_names = [
   'rentx-api',
-  'finapi',
+  // 'finapi',
   'rocket-socket',
   'certificate',
   'todos',
-  'valoriza-api',
+  // 'valoriza-api',
   'ignews',
-  'watchme',
-  'upfi',
-  'dashgo',
+  // 'watchme',
+  // 'upfi',
+  // 'dashgo',
   'worldtrip',
   'spacetraveling',
   'dtmoney',
@@ -137,22 +137,22 @@ export default function Projects() {
                       borderWidth="1px"
                       borderColor="gray.700"
                     >
-                      <Image
-                        fallbackSrc="/images/project_cover.svg"
-                        src={project?.images[0]}
-                        alt={project.name}
-                      />
-                    </Box>
-                    <Box w="100%" mt="5">
                       <Button
                         variant="unstyled"
+                        boxSize="auto"
                         onClick={() => handleOpenModal(project)}
-                        textAlign="left"
-                        fontWeight="medium"
-                        fontSize="lg"
                       >
-                        {project.name}
+                        <Image
+                          fallbackSrc="/images/project_cover.svg"
+                          src={project?.images[0]}
+                          alt={project.name}
+                        />
                       </Button>
+                    </Box>
+                    <Box w="100%" mt="5">
+                      <Text textAlign="left" fontWeight="medium" fontSize="lg">
+                        {project.name}
+                      </Text>
                       <Text fontSize="sm" mt="6px" color="gray.100">
                         {project.short_description}
                       </Text>
