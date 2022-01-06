@@ -91,7 +91,8 @@ export default function About() {
           <Grid
             w="100%"
             templateColumns={{
-              base: 'repeat(2, 150px)',
+              base: 'repeat(1, 150px)',
+              sm: 'repeat(2, 150px)',
               md: 'repeat(4, minmax(150px, 1fr))',
             }}
             justifyContent="space-around"

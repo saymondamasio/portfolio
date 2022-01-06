@@ -38,7 +38,6 @@ export function NavMenu() {
           variant="unstyled"
           fontSize="24"
           onClick={onOpen}
-          mr="2"
         />
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
           <DrawerOverlay>

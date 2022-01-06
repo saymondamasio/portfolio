@@ -18,14 +18,14 @@ export function Banner({ ...rest }: Props) {
   return (
     <Flex w="100%" justify="space-between" {...rest}>
       <Flex direction="column">
-        <Text fontSize="4xl" lineHeight="47px" fontWeight="bold">
+        <Text fontSize={['3xl', '4xl']} lineHeight="47px" fontWeight="bold">
           Olá, eu sou o <br /> Saymon Damásio :{')'}
         </Text>
         <Text fontSize="large" fontWeight="medium" color="gray.100" mt="5">
           Desenvolvedor Full-Stack & Mobile
         </Text>
 
-        <Flex mt="10" gap="15px">
+        <Flex mt="10" gap="15px" direction={['column', 'row']}>
           <Button
             variant="ghost"
             bgColor="green.300"
