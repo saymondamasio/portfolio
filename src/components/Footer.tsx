@@ -13,7 +13,7 @@ export function Footer({ ...rest }: Props) {
       {...rest}
     >
       <Text>
-        Feito com 💜 por{' '}
+        Feito por{' '}
         <Text as="span" fontWeight="bold" color="green.300">
           Saymon Damásio
         </Text>
