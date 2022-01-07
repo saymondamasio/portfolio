@@ -34,6 +34,34 @@ const techs = [
     name: 'Node.js',
     logo: '/images/nodejs.svg',
   },
+  {
+    name: 'Express',
+    logo: '/images/express.svg',
+  },
+  {
+    name: 'MongoDB',
+    logo: '/images/mongo.svg',
+  },
+  {
+    name: 'PostgreSQL',
+    logo: '/images/postgres.svg',
+  },
+  {
+    name: 'Git',
+    logo: '/images/git.svg',
+  },
+  {
+    name: 'GitHub',
+    logo: '/images/github.svg',
+  },
+  {
+    name: 'Express',
+    logo: '/images/express.svg',
+  },
+  {
+    name: 'Docker',
+    logo: '/images/docker.svg',
+  },
 ]
 
 export default function Techs() {
