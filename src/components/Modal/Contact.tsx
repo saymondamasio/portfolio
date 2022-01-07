@@ -60,6 +60,7 @@ export function Contact({ isOpen, onClose }: Props) {
               target="_blank"
               justifyContent="flex-start"
               w="100%"
+              variant="ghost"
               bgColor="green.400"
               leftIcon={
                 <Icon as={RiGithubFill} boxSize="20px" marginRight="20px" />
@@ -72,6 +73,7 @@ export function Contact({ isOpen, onClose }: Props) {
               href="https://www.instagram.com/saymondamasio95"
               target="_blank"
               w="100%"
+              variant="ghost"
               bgColor="green.400"
               justifyContent="flex-start"
               leftIcon={
@@ -84,6 +86,7 @@ export function Contact({ isOpen, onClose }: Props) {
               as="a"
               href="https://app.rocketseat.com.br/me/saymondamasio"
               target="_blank"
+              variant="ghost"
               justifyContent="flex-start"
               w="100%"
               bgColor="green.400"
