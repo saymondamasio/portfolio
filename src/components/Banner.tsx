@@ -39,6 +39,9 @@ export function Banner({ ...rest }: Props) {
               px="7"
               py="3"
               borderRadius="0"
+              as="a"
+              target="_blank"
+              href="https://drive.google.com/file/d/1B_A-9oo0ZmesQfX5Zzmr5YZ2sLw51NQv/view?usp=sharing"
             >
               Download CV
             </Button>
