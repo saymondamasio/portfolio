@@ -1,11 +1,8 @@
 import {
-  Box,
-  Button,
   Flex,
   Grid,
   GridItem,
   Heading,
-  Image,
   Spinner,
   Text,
   useDisclosure,
@@ -14,6 +11,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { v4 } from 'uuid'
+import { CardProject } from '../components/CardProject'
 import { ViewProject } from '../components/Modal/ViewProject'
 import { api } from '../services/api'
 
@@ -103,8 +101,8 @@ export default function Projects() {
         <Flex maxW="1140px" w="100%" px="10" direction="column" align="center">
           <Heading fontSize="3xl">Projetos</Heading>
           {isLoading ? (
-            <Flex flex="1" justify="center">
-              <Spinner />
+            <Flex flex="1" justify="center" align="center">
+              <Spinner size="xl" color="green.400" />
             </Flex>
           ) : error ? (
             <Flex flex="1" justify="center">
@@ -121,42 +119,10 @@ export default function Projects() {
             >
               {data!.map(project => (
                 <GridItem key={project.id}>
-                  <Flex
-                    h="100%"
-                    direction="column"
-                    align="center"
-                    px="5"
-                    py="5"
-                    borderColor="gray.700"
-                    borderWidth="1px"
-                    bgColor="gray.900"
-                  >
-                    <Box
-                      bgColor="black"
-                      borderWidth="1px"
-                      borderColor="gray.700"
-                    >
-                      <Button
-                        variant="unstyled"
-                        boxSize="auto"
-                        onClick={() => handleOpenModal(project)}
-                      >
-                        <Image
-                          fallbackSrc="/images/project_cover.svg"
-                          src={project?.images[0]}
-                          alt={project.name}
-                        />
-                      </Button>
-                    </Box>
-                    <Box w="100%" mt="5">
-                      <Text textAlign="left" fontWeight="medium" fontSize="lg">
-                        {project.name}
-                      </Text>
-                      <Text fontSize="sm" mt="6px" color="gray.100">
-                        {project.short_description}
-                      </Text>
-                    </Box>
-                  </Flex>
+                  <CardProject
+                    project={project}
+                    handleOpenModal={() => handleOpenModal(project)}
+                  />
                 </GridItem>
               ))}
             </Grid>
