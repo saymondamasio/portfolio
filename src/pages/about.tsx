@@ -71,10 +71,11 @@ export default function About() {
           <Heading fontSize="3xl">Sobre mim</Heading>
 
           <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
-            Olá, sou Saymon Damásio, sou desenvolvedor fullstack a mais de 2
-            anos, mais focado em backend e moro atualmente no Brasil. Gosto nas
-            horas vagas de jogar video games, assistir anime e codar alguns
-            projetos open-source.
+            Olá, sou Saymon Damásio, sou
+            <Text as="b"> desenvolvedor full stack</Text> com o foco em backend.
+            Atualmente estou pesquisando oportunidades de emprego na área de
+            informática, enquanto isso faço alguns
+            <Text as="i"> freelas</Text> no Workana.
           </Text>
           <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
             Minha jornada na area de programação começou em 2012, quando comecei
