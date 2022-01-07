@@ -24,8 +24,8 @@ export function Menu() {
           </ActiveLink>
         </ListItem>
         <ListItem>
-          <ActiveLink href="/contact" passHref>
-            <Link fontSize="lg">Contato</Link>
+          <ActiveLink href="/techs" passHref>
+            <Link fontSize="lg">Tecnologias</Link>
           </ActiveLink>
         </ListItem>
       </List>
