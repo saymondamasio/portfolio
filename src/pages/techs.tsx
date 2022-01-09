@@ -7,6 +7,10 @@ const techs = [
     logo: '/images/react.svg',
   },
   {
+    name: 'Redux',
+    logo: '/images/redux.svg',
+  },
+  {
     name: 'Next.js',
     logo: '/images/next.svg',
   },

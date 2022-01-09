@@ -8,11 +8,6 @@ import { ViewProject } from '../components/Modal/ViewProject'
 import { api } from '../services/api'
 
 const repo_names = [
-  'rentx-api',
-  'rocket-socket',
-  'certificate',
-  'todos',
-  'valoriza-api',
   'ignews',
   'watchme',
   'upfi',
@@ -21,6 +16,12 @@ const repo_names = [
   'spacetraveling',
   'dtmoney',
   'github-explorer',
+  'redux',
+  'rentx-api',
+  'rocket-socket',
+  'certificate',
+  'todos',
+  'valoriza-api',
 ]
 
 type Tech = {
