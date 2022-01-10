@@ -66,6 +66,14 @@ const techs = [
     name: 'Docker',
     logo: '/images/docker.svg',
   },
+  {
+    name: 'Prisma',
+    logo: '/images/prisma.svg',
+  },
+  {
+    name: 'Typeorm',
+    logo: '/images/typeorm.svg',
+  },
 ]
 
 export default function Techs() {
