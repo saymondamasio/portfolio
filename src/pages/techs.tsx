@@ -71,7 +71,7 @@ const techs = [
     logo: '/images/prisma.svg',
   },
   {
-    name: 'Typeorm',
+    name: 'TypeORM',
     logo: '/images/typeorm.svg',
   },
 ]
