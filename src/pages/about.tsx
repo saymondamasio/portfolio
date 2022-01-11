@@ -72,7 +72,7 @@ export default function About() {
 
           <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
             Olá, sou Saymon Damásio, sou
-            <Text as="b"> desenvolvedor full stack</Text> com o foco em backend.
+            <Text as="b"> desenvolvedor full stack</Text> com o foco em <b>frontend</b>.
             Atualmente estou pesquisando oportunidades de emprego na área de
             informática, enquanto isso faço alguns
             <Text as="i"> freelas</Text> no Workana.
