@@ -7,6 +7,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
+import Typewriter from 'typewriter-effect'
 import { Contact } from './Modal/Contact'
 
 type Props = FlexProps
@@ -24,7 +25,16 @@ export function Banner({ ...rest }: Props) {
       <Flex w="100%" justify="space-between" {...rest}>
         <Flex direction="column">
           <Text fontSize={['3xl', '4xl']} lineHeight="47px" fontWeight="bold">
-            Olá, eu sou o <br /> Saymon Damásio :{')'}
+            <Typewriter
+              onInit={typewriter =>
+                typewriter
+                  .typeString('Olá, eu sou o ')
+                  .pauseFor(1000)
+                  .typeString('<br/>Saymon Damásio :)')
+                  .start()
+              }
+              options={{ cursor: '_' }}
+            />
           </Text>
           <Text fontSize="large" fontWeight="medium" color="gray.100" mt="5">
             Desenvolvedor Full-Stack & Mobile
