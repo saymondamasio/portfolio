@@ -74,6 +74,10 @@ const techs = [
     name: 'TypeORM',
     logo: '/images/typeorm.svg',
   },
+  {
+    name: 'Nest',
+    logo: '/images/nestjs.svg',
+  },
 ]
 
 export default function Techs() {
