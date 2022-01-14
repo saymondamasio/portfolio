@@ -38,7 +38,7 @@ interface Props {
   onClose: () => void
 }
 
-export function ViewProject({ isOpen, onClose, project }: Props) {
+export function ViewProjectModal({ isOpen, onClose, project }: Props) {
   const images = project?.images || []
   const videos = project?.videos || []
 

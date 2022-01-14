@@ -21,7 +21,7 @@ interface Props {
   onClose: () => void
 }
 
-export function Contact({ isOpen, onClose }: Props) {
+export function ContactModal({ isOpen, onClose }: Props) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />

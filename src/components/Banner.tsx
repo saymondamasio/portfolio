@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import Typewriter from 'typewriter-effect'
-import { Contact } from './Modal/Contact'
+import { ContactModal } from './Modal/ContactModal'
 
 type Props = FlexProps
 
@@ -80,7 +80,7 @@ export function Banner({ ...rest }: Props) {
         )}
       </Flex>
 
-      <Contact isOpen={isOpen} onClose={onClose} />
+      <ContactModal isOpen={isOpen} onClose={onClose} />
     </>
   )
 }
