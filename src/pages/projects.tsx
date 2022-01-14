@@ -22,6 +22,7 @@ const repo_names = [
   'certificate',
   'todos',
   'valoriza-api',
+  'gobarber-api'
 ]
 
 type Tech = {
