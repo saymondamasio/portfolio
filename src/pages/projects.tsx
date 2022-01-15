@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { v4 } from 'uuid'
 import { CardProject } from '../components/CardProject'
-import { ViewProject } from '../components/Modal/ViewProject'
+import { ViewProjectModal } from '../components/Modal/ViewProjectModal'
 import { api } from '../services/api'
 
 const repo_names = {
@@ -87,7 +87,7 @@ export default function Projects({ projects }: Props) {
               </GridItem>
             ))}
           </Grid>
-          <ViewProject
+          <ViewProjectModal
             isOpen={isOpen}
             onClose={onClose}
             project={projectSelected!}
