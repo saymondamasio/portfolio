@@ -27,7 +27,14 @@ const repo_names = {
     'redux',
     'rocket-socket',
   ],
-  back: ['rentx-api', 'gobarber-api', 'valoriza-api', 'certificate', 'todos'],
+  back: [
+    'rentx-api',
+    'gobarber-api',
+    'valoriza-api',
+    'surveys-api',
+    'certificate',
+    'todos',
+  ],
 }
 
 type Tech = {
