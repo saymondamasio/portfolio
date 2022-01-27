@@ -2,6 +2,8 @@ import {
   Badge,
   Flex,
   Heading,
+  Icon,
+  IconButton,
   Image,
   Modal,
   ModalBody,
@@ -14,6 +16,9 @@ import {
 } from '@chakra-ui/react'
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { BsArrowsFullscreen } from 'react-icons/bs'
+import { useState } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
 
 type Tech = {
   name: string
@@ -42,8 +47,15 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
   const images = project?.images || []
   const videos = project?.videos || []
 
+  const [fullScreen, setFullScreen] = useState(false)
+
+  const closeModal = () => {
+    setFullScreen(false)
+    onClose()
+  }
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={closeModal}>
       <ModalOverlay />
       <ModalContent bgColor="gray.900" w="90%" maxW="900px" p="30px">
         <ModalHeader p="0">{project?.name}</ModalHeader>
@@ -52,7 +64,24 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
           <Flex>
             {images.length > 0 || videos.length > 0 ? (
               <Swiper
-                style={{ width: '100%', flex: '1' }}
+                style={
+                  fullScreen
+                    ? {
+                        top: '25px',
+                        bottom: '25px',
+                        left: '25px',
+                        right: '25px',
+                        position: 'fixed',
+                        transition: 'position 1s linear',
+                        borderRadius: '10px',
+                      }
+                    : {
+                        width: '100%',
+                        borderRadius: '10px',
+                        flex: '1',
+                        transition: 'position 1s linear',
+                      }
+                }
                 modules={[Navigation, Pagination, Autoplay, A11y]}
                 navigation
                 pagination={{ clickable: true }}
@@ -77,6 +106,42 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
                     </video>
                   </SwiperSlide>
                 ))}
+                <IconButton
+                  aria-label="full screen"
+                  position="absolute"
+                  zIndex={1000}
+                  top="10px"
+                  right="10px"
+                  onClick={() => setFullScreen(!fullScreen)}
+                  display={fullScreen ? 'flex' : 'none'}
+                  alignContent="center"
+                  justifyContent="center"
+                  variant="unstyled"
+                  backdropFilter="auto"
+                  backdropBlur="2px"
+                  icon={
+                    <Icon as={AiOutlineClose} fontSize={25} color="green.400" />
+                  }
+                />
+                <IconButton
+                  aria-label="full screen"
+                  position="absolute"
+                  zIndex={1000}
+                  bottom="10px"
+                  right="10px"
+                  onClick={() => setFullScreen(!fullScreen)}
+                  display="flex"
+                  alignContent="center"
+                  justifyContent="center"
+                  variant="unstyled"
+                  icon={
+                    <Icon
+                      as={BsArrowsFullscreen}
+                      fontSize={25}
+                      color="green.400"
+                    />
+                  }
+                />
               </Swiper>
             ) : (
               <Image
