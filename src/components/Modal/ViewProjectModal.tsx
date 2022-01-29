@@ -61,25 +61,38 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
         <ModalHeader p="0">{project?.name}</ModalHeader>
         <ModalCloseButton top="30px" right="30px" />
         <ModalBody mt="10" p="0" w="100%">
-          <Flex>
+          <Flex
+            animation={fullScreen ? 'fadeIn' : 'fadeOut'}
+            id="modal-content"
+            onClick={(e: any) =>
+              e.target.id === 'modal-content' && setFullScreen(false)
+            }
+            style={
+              fullScreen
+                ? {
+                    position: 'fixed',
+                    top: '0',
+                    bottom: '0',
+                    left: '0',
+                    right: '0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  }
+                : {}
+            }
+          >
             {images.length > 0 || videos.length > 0 ? (
               <Swiper
                 style={
                   fullScreen
                     ? {
-                        top: '25px',
-                        bottom: '25px',
-                        left: '25px',
-                        right: '25px',
-                        position: 'fixed',
-                        transition: 'position 1s linear',
+                        width: '85vw',
                         borderRadius: '10px',
                       }
                     : {
-                        width: '100%',
                         borderRadius: '10px',
-                        flex: '1',
-                        transition: 'position 1s linear',
                       }
                 }
                 modules={[Navigation, Pagination, Autoplay, A11y]}
