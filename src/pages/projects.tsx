@@ -17,6 +17,7 @@ import { api } from '../services/api'
 const repo_names = {
   front: [
     'ignews',
+    'moveit',
     'watchme',
     'upfi',
     'dashgo',
@@ -25,13 +26,13 @@ const repo_names = {
     'dtmoney',
     'github-explorer',
     'redux',
-    'rocket-socket',
   ],
   back: [
     'rentx-api',
-    'gobarber-api',
     'valoriza-api',
+    'gobarber-api',
     'surveys-api',
+    'rocket-socket',
     'certificate',
     'todos',
   ],
