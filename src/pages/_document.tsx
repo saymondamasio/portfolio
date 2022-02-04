@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           <meta httpEquiv="content-language" content="pt-br" />
           <meta
             property="og:image"
-            content={`${window.location.hostname}/images/preview.png`}
+            content="https://saymondamasio.vercel.app/images/preview.png"
           />
           <meta
             property="og:title"
