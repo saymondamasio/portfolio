@@ -5,6 +5,30 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="author" content="Saymon Damásio" />
+          <meta
+            name="description"
+            content="Meu nome é Saymon,sou desenvolvedor full-stack focado em frontend."
+          />
+          <meta
+            name="keywords"
+            content="sites, web, node, desenvolvimento, frontend, saymon, saymon damasio, programador, front-end, back-end, freelancer, freela, website, portfólio"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta name="theme-color" content="#00DF5E" />
+          {/* <meta name="copyright" content="saymon 2022" /> */}
+          <meta httpEquiv="content-language" content="pt-br" />
+          <meta property="og:image" content="/images/preview.png" />
+          <meta
+            property="og:title"
+            content="Saymon Damásio - Full-stack developer"
+          />
+          <meta property="og:description" content="Full-stack developer" />
+
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
 
