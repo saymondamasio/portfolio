@@ -6,6 +6,10 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
+          <meta
+            name="google-site-verification"
+            content="HjumN7wqw6vh3s-Q7vJxW4l479UbWqQmfW4bgAM64UI"
+          />
           <meta name="author" content="Saymon Damásio" />
           <meta
             name="description"
