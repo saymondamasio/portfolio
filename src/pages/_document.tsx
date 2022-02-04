@@ -22,7 +22,10 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#00DF5E" />
           {/* <meta name="copyright" content="saymon 2022" /> */}
           <meta httpEquiv="content-language" content="pt-br" />
-          <meta property="og:image" content="/images/preview.png" />
+          <meta
+            property="og:image"
+            content={`${window.location.hostname}/images/preview.png`}
+          />
           <meta
             property="og:title"
             content="Saymon Damásio - Full-stack developer"
