@@ -19,6 +19,7 @@ const repo_names = {
     'ignews',
     'moveit',
     'letmeask',
+    'podcastr',
     'watchme',
     'upfi',
     'dashgo',
