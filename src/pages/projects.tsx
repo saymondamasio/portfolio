@@ -18,6 +18,7 @@ const repo_names = {
   front: [
     'ignews',
     'moveit',
+    'letmeask',
     'watchme',
     'upfi',
     'dashgo',
