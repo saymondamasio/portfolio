@@ -23,11 +23,11 @@ const repo_names = {
     'letmeask',
     'spacetraveling',
     'github-explorer',
+    'dtmoney',
     'worldtrip',
     'watchme',
     'upfi',
     'dashgo',
-    'dtmoney',
     'redux',
   ],
   back: [
