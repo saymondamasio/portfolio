@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
             content="Saymon Damásio - Full-stack developer"
           />
           <meta property="og:description" content="Full-stack developer" />
-          
+
           <link rel="canonical" href="https://saymoncode.com" />
 
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
