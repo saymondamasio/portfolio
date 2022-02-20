@@ -32,6 +32,7 @@ const repo_names = {
     'redux',
   ],
   back: [
+    'ecommerce-api',
     'rentx-api',
     'gobarber-api',
     'valoriza-api',
