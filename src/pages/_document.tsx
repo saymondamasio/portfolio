@@ -6,10 +6,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="google-site-verification"
-            content="HjumN7wqw6vh3s-Q7vJxW4l479UbWqQmfW4bgAM64UI"
-          />
           <meta name="author" content="Saymon Damásio" />
           <meta
             name="description"
@@ -35,9 +31,6 @@ export default class MyDocument extends Document {
             content="Saymon Damásio - Full-stack developer"
           />
           <meta property="og:description" content="Full-stack developer" />
-
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
 
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link
