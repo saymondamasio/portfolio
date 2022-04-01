@@ -42,6 +42,7 @@ const repo_names = {
     'certificate',
     'todos',
   ],
+  mobile: ['todos-mobile', 'myskills'],
 }
 
 type Tech = {
@@ -65,6 +66,7 @@ interface Props {
   projects: {
     front: Project[]
     back: Project[]
+    mobile: Project[]
   }
 }
 
@@ -133,6 +135,29 @@ export default function Projects({ projects }: Props) {
             </Grid>
           </Box>
 
+          <Box mt="10">
+            <Heading as="h2" fontSize="2xl">
+              Mobile
+            </Heading>
+            <Grid
+              mt="30px"
+              templateColumns={{
+                sm: 'repeat(auto-fit, minmax(300px,1fr))',
+                lg: 'repeat(3, 1fr)',
+              }}
+              gap="5"
+            >
+              {projects.mobile?.map(project => (
+                <GridItem key={project.id}>
+                  <CardProject
+                    project={project}
+                    handleOpenModal={() => handleOpenModal(project)}
+                  />
+                </GridItem>
+              ))}
+            </Grid>
+          </Box>
+
           <ViewProjectModal
             isOpen={isOpen}
             onClose={onClose}
@@ -147,6 +172,7 @@ export default function Projects({ projects }: Props) {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects_back: Project[] = []
   const projects_front: Project[] = []
+  const projects_mobile: Project[] = []
 
   for await (const repo_name of repo_names.back) {
     let project_info
@@ -193,11 +219,34 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     } catch {}
   }
 
+  for await (const repo_name of repo_names.mobile) {
+    let project_info
+
+    try {
+      const response = await api.get(
+        `https://raw.githubusercontent.com/saymondamasio/${repo_name}/main/project-info.json`
+      )
+      project_info = response.data
+      projects_front.push({
+        id: v4(),
+        name: project_info.name,
+        short_description: project_info.short_description,
+        description: project_info.description,
+        images: project_info.images || [],
+        videos: project_info.videos || [],
+        techs: project_info.techs || [],
+        link_preview: project_info.link_preview || null,
+        link_repo: `https://github.com/saymondamasio/${repo_name}`,
+      })
+    } catch {}
+  }
+
   return {
     props: {
       projects: {
         front: projects_front,
         back: projects_back,
+        mobile: projects_mobile,
       },
     },
     revalidate: false,
