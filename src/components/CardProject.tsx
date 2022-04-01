@@ -33,6 +33,7 @@ export function CardProject({ handleOpenModal, project }: Props) {
             fallbackSrc="/images/project_cover.svg"
             src={project?.images[0]}
             alt={project?.name}
+            maxH={200}
           />
         </Button>
       </Box>

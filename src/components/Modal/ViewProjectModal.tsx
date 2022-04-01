@@ -89,10 +89,13 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
                   fullScreen
                     ? {
                         width: '85vw',
+                        height: '85vh',
+                        backgroundColor: '#333',
                         borderRadius: '10px',
                       }
                     : {
                         borderRadius: '10px',
+                        height: '80vh',
                       }
                 }
                 modules={[Navigation, Pagination, Autoplay, A11y]}
@@ -103,8 +106,9 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
                 {images?.map(image => (
                   <SwiperSlide key={image}>
                     <Image
+                      height="100%"
                       width="100%"
-                      objectFit="cover"
+                      objectFit="contain"
                       src={image}
                       alt={project.name}
                     />
@@ -112,7 +116,16 @@ export function ViewProjectModal({ isOpen, onClose, project }: Props) {
                 ))}
                 {videos?.map(video => (
                   <SwiperSlide key={video}>
-                    <video width="100%" autoPlay controls={false} loop>
+                    <video
+                      autoPlay
+                      controls={false}
+                      loop
+                      style={{
+                        objectFit: 'contain',
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    >
                       <source src={video} type="video/mp4" />
                       <source src="movie.ogg" type="video/ogg" />
                       Your browser does not support the video tag.
