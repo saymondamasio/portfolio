@@ -227,7 +227,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         `https://raw.githubusercontent.com/saymondamasio/${repo_name}/main/project-info.json`
       )
       project_info = response.data
-      projects_front.push({
+      projects_mobile.push({
         id: v4(),
         name: project_info.name,
         short_description: project_info.short_description,
