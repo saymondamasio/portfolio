@@ -42,7 +42,7 @@ const repo_names = {
     'certificate',
     'todos',
   ],
-  mobile: ['todos-mobile', 'myskills'],
+  mobile: ['todos-mobile', 'myskills', 'gofinances'],
 }
 
 type Tech = {
