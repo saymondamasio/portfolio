@@ -1,0 +1,60 @@
+{
+  "name": "Portfolio",
+  "description": "Um site feito em React para servir de portfolio e mostrar meus projetos que fiz até agora. Usei algumas tecnologias bem legais como o Chakra UI para o desenvolvimento rápido de telas. Futuramente planejo colocar um seção de blog.",
+  "short_description": "Veja meus projetos",
+  "techs": [
+    {
+      "name": "React.js",
+      "url": "https://reactjs.org"
+    },
+    {
+      "name": "Next",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Chakra UI",
+      "url": "https://chakra-ui.com"
+    },
+    {
+      "name": "React Icons",
+      "url": "https://react-icons.netlify.com"
+    },
+    {
+      "name": "SASS",
+      "url": "https://sass-lang.com/"
+    },
+    {
+      "name": "React Query",
+      "url": "https://react-query.tanstack.com"
+    },
+    {
+      "name": "Swiper",
+      "url": "https://swiperjs.com/react"
+    },
+    {
+      "name": "TypewriterJS v2",
+      "url": "https://github.com/tameemsafi/typewriterjs"
+    },
+    {
+      "name": "Eslint",
+      "url": "https://eslint.org"
+    },
+    {
+      "name": "Prettier",
+      "url": "https://prettier.io"
+    }
+  ],
+  "videos": [
+    "https://raw.githubusercontent.com/saymondamasio/rentx-mobile/main/.github/demonstration.mp4"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/saymondamasio/rentx-mobile/main/.github/screenshot-1.png",
+    "https://raw.githubusercontent.com/saymondamasio/rentx-mobile/main/.github/screenshot-2.png",
+    "https://raw.githubusercontent.com/saymondamasio/rentx-mobile/main/.github/screenshot-3.png",
+    "https://raw.githubusercontent.com/saymondamasio/rentx-mobile/main/.github/screenshot-4.png"
+  ]
+}
