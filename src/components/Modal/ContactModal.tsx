@@ -10,6 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import {
+  RiDiscordFill,
   RiGithubFill,
   RiInstagramFill,
   RiLinkedinBoxFill,
@@ -95,6 +96,20 @@ export function ContactModal({ isOpen, onClose }: Props) {
               }
             >
               Rocketseat
+            </Button>
+            <Button
+              as="a"
+              href="https://discordapp.com/users/904514277812080680"
+              target="_blank"
+              variant="ghost"
+              justifyContent="flex-start"
+              w="100%"
+              bgColor="green.400"
+              leftIcon={
+                <Icon as={RiDiscordFill} boxSize="20px" marginRight="20px" />
+              }
+            >
+              Discord
             </Button>
           </Stack>
         </ModalBody>
