@@ -3,24 +3,12 @@ import Head from 'next/head'
 
 const techs = [
   {
-    name: 'React',
-    logo: '/images/react.svg',
-  },
-  {
-    name: 'Redux',
-    logo: '/images/redux.svg',
-  },
-  {
-    name: 'Next.js',
-    logo: '/images/next.svg',
-  },
-  {
-    name: 'Chakra UI',
-    logo: '/images/chakra-ui.svg',
-  },
-  {
     name: 'TypeScript',
     logo: '/images/typescript.svg',
+  },
+  {
+    name: 'React',
+    logo: '/images/react.svg',
   },
   {
     name: 'HTML 5',
@@ -33,6 +21,26 @@ const techs = [
   {
     name: 'Sass',
     logo: '/images/sass.svg',
+  },
+  {
+    name: 'Next.js',
+    logo: '/images/next.svg',
+  },
+  {
+    name: 'Chakra UI',
+    logo: '/images/chakra-ui.svg',
+  },
+  {
+    name: 'Redux',
+    logo: '/images/redux.svg',
+  },
+  {
+    name: 'React Native',
+    logo: '/images/react-native.svg',
+  },
+  {
+    name: 'Expo',
+    logo: '/images/expo.svg',
   },
   {
     name: 'Node.js',
@@ -59,10 +67,6 @@ const techs = [
     logo: '/images/github.svg',
   },
   {
-    name: 'Express',
-    logo: '/images/express.svg',
-  },
-  {
     name: 'Docker',
     logo: '/images/docker.svg',
   },
@@ -77,6 +81,10 @@ const techs = [
   {
     name: 'Nest',
     logo: '/images/nestjs.svg',
+  },
+  {
+    name: 'CI/CD',
+    logo: '/images/ci-cd.svg',
   },
 ]
 
