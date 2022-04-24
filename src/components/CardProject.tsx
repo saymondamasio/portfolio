@@ -27,13 +27,18 @@ export function CardProject({ handleOpenModal, project }: Props) {
         <Button
           variant="unstyled"
           boxSize="auto"
+          w="100%"
+          minW={350}
+          display="flex"
           onClick={() => handleOpenModal(project)}
         >
           <Image
             fallbackSrc="/images/project_cover.svg"
+            maxH={200}
+            display="block"
+            alignSelf="center"
             src={project?.images[0]}
             alt={project?.name}
-            maxH={200}
           />
         </Button>
       </Box>
