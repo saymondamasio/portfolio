@@ -25,4 +25,13 @@ export const theme = extendTheme({
       },
     },
   },
+  components: {
+    Progress: {
+      baseStyle: {
+        filledTrack: {
+          bg: 'green.300',
+        },
+      },
+    },
+  },
 })
