@@ -85,20 +85,6 @@ export function ContactModal({ isOpen, onClose }: Props) {
             </Button>
             <Button
               as="a"
-              href="https://app.rocketseat.com.br/me/saymondamasio"
-              target="_blank"
-              variant="ghost"
-              justifyContent="flex-start"
-              w="100%"
-              bgColor="green.400"
-              leftIcon={
-                <Icon as={RiRocket2Fill} boxSize="20px" marginRight="20px" />
-              }
-            >
-              Rocketseat
-            </Button>
-            <Button
-              as="a"
               href="https://discordapp.com/users/904514277812080680"
               target="_blank"
               variant="ghost"
