@@ -79,7 +79,11 @@ export default function About() {
             <Text as="i"> freelas</Text> no Workana.
           </Text>
           <Text mt="8" fontSize="lg" color="gray.100" textAlign="center">
-            Minha jornada na area de programação começou em 2012, quando comecei o curso de técnico de informática, foi me apresentado o Java e foi nessa linguagem que aprendi a logica de programação, mais recentemente aprendi Javascript e estou nesse ecossistema até hoje e alem disso estou aprendendo conceitos para deixar meu codigo melhor.
+            Minha jornada na area de programação começou em 2012, quando comecei
+            o curso de técnico de informática, foi me apresentado o Java e foi
+            nessa linguagem que aprendi a logica de programação, mais
+            recentemente aprendi Javascript e estou nesse ecossistema até hoje e
+            alem disso estou aprendendo conceitos para deixar meu codigo melhor.
           </Text>
         </Flex>
 
